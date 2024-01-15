@@ -1,0 +1,10 @@
+:root {
+  --white: #fff;
+  --blue: #3d5170;
+  --grey: grey;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+button{ 
+background-color: var(--blue);
+}

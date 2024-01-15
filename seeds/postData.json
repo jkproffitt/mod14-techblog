@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Why MVC",
+        "contents": "MVC is simply a design or architectural pattern used in software engineering. While this isn’t a hard rule, but this pattern helps developers focus on a particular aspect of their application, one step at a time. The main goal of MVC is to split large applications into specific sections that have their own individual purpose. It also allows developers to logically structure applications in a secure way, which we will show in this tutorial. But first, let’s break down what each aspect of the pattern provides.",
+        "user_id": 1
+    },
+    {
+        "title": "Routing with Express in Node",
+        "contents": " Express.js has an “app” object corresponding to HTTP. We define the routes by using the methods of this “app” object. This app object specifies a callback function, which is called when a request is received. We have different methods in app object for a different type of request.",
+        "topic": "Job Offers",
+        "user_id": 2
+    },
+    {
+        "title": "Sequelize Models",
+        "contents": "Models are the essence of Sequelize. A model is an abstraction that represents a table in your database. In Sequelize, it is a class that extends Model. The model tells Sequelize several things about the entity it represents, such as the name of the table in the database and which columns it has (and their data types)",
+        "user_id": 3
+    }
+]

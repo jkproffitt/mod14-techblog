@@ -1,1 +1,15 @@
-[]
+[
+    {
+      "user_name" : "sam001",
+      "password": "password1234"
+    },
+    {
+    "user_name" : "bob002",
+      "password": "password456"
+    },
+    {
+      "user_name" : "scott003",
+      "password": "password789"
+    }
+  ]
+  

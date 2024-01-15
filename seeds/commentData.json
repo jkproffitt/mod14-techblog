@@ -1,0 +1,12 @@
+[
+    {
+        "contents": "This makes more sense as why we are using MVC",
+        "user_id": 2,
+        "post_id": 2
+    },
+    {
+        "contents": "Express routing is new to me. This helped me understand it. Thank you.",
+        "user_id": 3,
+        "post_id": 3
+    }
+]
