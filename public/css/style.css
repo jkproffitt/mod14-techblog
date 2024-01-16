@@ -1,10 +1,64 @@
 :root {
   --white: #fff;
-  --blue: #3d5170;
+  --blue: #4325ee;
   --grey: grey;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 button{ 
 background-color: var(--blue);
+color: var(--white);
+border: none;
+border-radius: 3px;
+}
+
+textarea{
+  min-width: 25%;
+  width: 50%;
+}
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  color: var(--blue);
+  font-size: 2rem;
+}
+
+.action-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.new-post{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-post {
+  margin: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  background: lightgray;
+  padding: .5rem;
+  border-radius: 6px;
 }
