@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
 	try {
@@ -8,20 +7,17 @@ router.get('/', async (req, res) => {
 			include: [{ model: User }],
 		});
 		const posts = posted.map((post) => post.get({ plain: true }));
-		const con = console.log(posts);
 		res.render('home', {
-			con,
 			posts,
 			logged_in: req.session.logged_in,
 		});
 	} catch (err) {
-		console.log(err);
 		res.status(500).json(err);
 	}
 });
 
 router.get('/login', (req, res) => {
-	// If a session exists, redirect the request to the homepage
+	// If a session exists, redirect to the homepage
 	if (req.session.logged_in) {
 		res.redirect('/');
 		return;
@@ -33,39 +29,39 @@ router.get('/signup', (req, res) => {
 	try {
 		res.render('signUp');
 	} catch (err) {
-		console.log(err);
 		res.status(500).json(err);
 	}
 });
 
-// router.get('/post', (req, res) => {
-// 	res.render('post', {
-// 		logged_in: req.session.logged_in,
-// 	});
-// });
-
 // get single post
-router.get('post/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
 	try {
-		const post = await Post.findOne(req.params.id, {
-			where: { id: req.params.id },
+		const post = await Post.findByPk(req.params.id, {
 			include: [
-				User,
 				{
+					model: User,
 					model: Comment,
-					include: [User],
+					include: [
+						{
+							model: User,
+							attributes: ['user_name'],
+						},
+					],
 				},
 			],
 		});
+		const singlePost = post.get({ plain: true });
+		const user = await User.findByPk(singlePost.user_id);
+		const author = user.get({ plain: true });
 
-		if (post) {
-			const post = post.get({ plain: true });
-			res.render('single-post', { post, loggedIn: req.session.loggedIn });
-		} else {
-			res.status(404).end();
-		}
+		res.render('post', {
+			singlePost,
+			author,
+			logged_in: req.session.logged_in,
+		});
 	} catch (err) {
-		res.status(500).json(err);
+		console.error(err);
+		res.status(400).json({ error: err, message: 'Something went wrong.' });
 	}
 });
 

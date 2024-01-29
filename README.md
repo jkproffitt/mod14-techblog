@@ -1,6 +1,6 @@
 # mod14-techblog
 
-# 14 Model-View-Controller (MVC): Tech Blog
+## 14 Model-View-Controller (MVC): Tech Blog
 
 ## Your Task
 
@@ -79,7 +79,7 @@ You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to
 > -   A repository that includes only a README file but nothing else
 >
 > -   A repository that only includes starter code
-This Challenge is graded based on the following criteria:
+>     This Challenge is graded based on the following criteria:
 
 ### Technical Acceptance Criteria: 40%
 

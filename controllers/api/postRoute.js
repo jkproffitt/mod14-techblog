@@ -4,7 +4,7 @@ const { User, Post, Comment } = require('../../models');
 
 router.get('/', async (req, res) => {
 	try {
-		const postedData = await Post.findAll({
+		const postInfo = await Post.findAll({
 			include: [
 				{
 					model: Comment,
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 				},
 			],
 		});
-		const posts = postedData.map((post) => post.get({ plain: true }));
+		const posts = postInfo.map((post) => post.get({ plain: true }));
 
 		res.status(200).json({ posts });
 	} catch (err) {
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 });
 
 //get the specific post with all of its comments.
-router.get(':id', async (req, res) => {
+router.get('/:id', async (req, res) => {
 	try {
 		const post = await Post.findByPk(req.params.id, {
 			include: [
@@ -46,7 +46,7 @@ router.get(':id', async (req, res) => {
 		res.status(400).json(err);
 	}
 });
-
+//create
 router.post('/', async (req, res) => {
 	try {
 		const post = await Post.create({
@@ -59,7 +59,7 @@ router.post('/', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
+//update
 router.put('/:id', async (req, res) => {
 	try {
 		const updatePost = await Post.update(req.body, {
@@ -73,7 +73,7 @@ router.put('/:id', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
+//delete
 router.delete('/:id', async (req, res) => {
 	try {
 		const delPost = await Post.destroy({ where: { id: req.params.id } });

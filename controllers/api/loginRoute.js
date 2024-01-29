@@ -8,7 +8,6 @@ router.post('/', async (req, res) => {
 			where: { user_name: req.body.user_name },
 		});
 
-		// If there is no match with the username, send a incorrect message to the user and have them retry
 		if (!userCheck) {
 			res.status(400).json({
 				message: 'Incorrect username or password, please try again',
@@ -16,18 +15,14 @@ router.post('/', async (req, res) => {
 			return;
 		}
 
-		// Now verify the password the user has put in and check in the database if this password coincides with the username
+		// verify the password
 		const validPassword = await userCheck.checkPw(req.body.password);
-
-		// If the password doesn't exist, then send a error message of wrong password and have them retry.
 		if (!validPassword) {
 			res.status(401).json({
 				message: 'Incorrect password, please try again',
 			});
 			return;
 		}
-
-		// Session variables based on the current logged in user
 		req.session.save(() => {
 			req.session.user_id = userCheck.id;
 			req.session.logged_in = true;
@@ -45,7 +40,6 @@ router.post('/', async (req, res) => {
 
 router.post('/logout', (req, res) => {
 	if (req.session.logged_in) {
-		// Remove the session variables
 		req.session.destroy(() => {
 			res.status(204).end();
 		});
