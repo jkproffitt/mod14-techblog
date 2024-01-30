@@ -28,6 +28,13 @@ a:hover {
   color: var(--blue);
   font-size: 2rem;
 }
+.banner {
+  background-color: black !important;
+}
+
+.card-space {
+  margin: .5rem
+}
 
 .action-btn {
   display: flex;

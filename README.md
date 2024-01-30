@@ -2,7 +2,7 @@
 
 ## 14 Model-View-Controller (MVC): Tech Blog
 
-https://git.heroku.com/agile-thicket-03691
+[heroku app deployment link](https://agile-thicket-03691-7d2c4fa602f8.herokuapp.com/)
 
 ## Your Task
 

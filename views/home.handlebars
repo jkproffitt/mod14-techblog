@@ -29,7 +29,7 @@
             </div>
         </div>
     </nav>
- <section class="hero is-info is-small is-bold">
+ <section class="hero is-info is-small banner">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">Featured Posts</h1>
@@ -43,7 +43,7 @@
                              
                 <!-- START ARTICLE -->
                 {{#each posts as |post|}}
-                <div class="card article">
+                <div class="card article card-space">
                     <div class="card-content">
                         <div>
                            <h3><a href="./post/{{post.id}}">{{post.title}}</a></h3> 
