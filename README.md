@@ -2,7 +2,7 @@
 
 ## 14 Model-View-Controller (MVC): Tech Blog
 
-https://infinite-earth-54893-b2d2a725de91.herokuapp.com/
+https://git.heroku.com/agile-thicket-03691
 
 ## Your Task
 
