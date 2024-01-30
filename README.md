@@ -2,7 +2,7 @@
 
 ## 14 Model-View-Controller (MVC): Tech Blog
 
-https://git.heroku.com/infinite-earth-54893.git
+https://infinite-earth-54893-b2d2a725de91.herokuapp.com/
 
 ## Your Task
 
